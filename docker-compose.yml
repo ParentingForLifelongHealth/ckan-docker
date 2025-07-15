@@ -28,6 +28,7 @@ services:
         - TZ=${TZ}
     networks:
       - ckannet
+      - default
       - dbnet
       - solrnet
       - redisnet
@@ -106,6 +107,9 @@ services:
     
 networks:
   webnet:
+  default:
+    external:
+      name: my_custom_network
   ckannet:
   solrnet:
     internal: true
